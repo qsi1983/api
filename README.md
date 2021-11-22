@@ -1,2 +1,2 @@
 # api
-Test repository for API course
+Test repository for API course with Bear Cahill
