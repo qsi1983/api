@@ -32,9 +32,10 @@ jobs:
           
       - name: create pull request
         id: pull_to_dev
-        run: | 
-            MESSAGE=$(gh pr create -B development -H main --title 'Merge main branch into test branch' --body 'Created by Github action')
-           
+        run: |
+        
+            PULL_URL=$(gh pr create -B development -H main --title 'Merge main branch into test branch' --body 'Created by Github action')
+            echo $PULL_URL    
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
