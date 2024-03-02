@@ -33,7 +33,9 @@ jobs:
       - name: create pull request
         
         run: | 
-          {gh pr create -B development -H main --title 'Merge main branch into test branch' --body 'Created by Github action'} >> "$GITHUB_OUTPUT"
+          {
+            gh pr create -B development -H main --title 'Merge main branch into test branch' --body 'Created by Github action'
+          } >> "$GITHUB_OUTPUT"
           
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
