@@ -35,7 +35,8 @@ jobs:
         run: |
         
             PULL_URL=$(gh pr create -B development -H main --title 'Merge main branch into test branch' --body 'Created by Github action')
-            echo $PULL_URL    
+            echo $PULL_URL
+            gh pr merge $PULL_URL --auto
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
