@@ -4,9 +4,6 @@ name: CI
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-
-
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -31,3 +28,11 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          
+      - name: create pull request
+        run: gh pr create -B development -H test --title 'Merge branch_to_merge into base_branch' --body 'Created by Github action'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
+        
+    
