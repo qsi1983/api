@@ -30,7 +30,7 @@ jobs:
           echo test, and deploy your project.
           
       - name: create pull request
-        run: gh pr create -B development -H test --title 'Merge branch_to_merge into base_branch' --body 'Created by Github action'
+        run: gh pr create -B main -H development --title 'Merge development branch into test branch' --body 'Created by Github action'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
