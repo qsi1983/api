@@ -33,7 +33,7 @@ jobs:
       - name: create pull request
         id: pull_to_dev
         run: |
-            PULL_URL=$(gh pr create -B test -H development --title 'Merge main branch into test branch' --body 'Created by Github action')
+            PULL_URL=$(gh pr create -B test -H development --title 'Merge development branch into test branch' --body 'Created by Github action')
             echo $PULL_URL
             gh pr merge $PULL_URL --merge --auto
         env:
