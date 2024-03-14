@@ -36,6 +36,7 @@ jobs:
             PULL_URL=$(gh pr create -B production -H test --title 'Merge test branch into development branch' --body 'Created by Github action')
             echo $PULL_URL
             gh pr merge $PULL_URL --merge --auto
+        continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
